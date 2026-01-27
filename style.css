@@ -1,0 +1,141 @@
+/* Flexoki Color Scheme */
+:root {
+    --bg: #FFFCF0;
+    --bg-2: #F2F0E5;
+    --ui: #E6E4D9;
+    --ui-2: #DAD8CE;
+    --tx: #100F0F;
+    --tx-2: #6F6E69;
+    --tx-3: #B7B5AC;
+    --orange: #DA702C;
+    --red: #D14D41;
+    --cyan: #3AA99F;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background-color: var(--bg);
+    color: var(--tx);
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--ui-2);
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 1.75rem;
+    letter-spacing: 0.05em;
+    color: var(--tx);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#poem-display {
+    flex: 1;
+    padding: 1.5rem 0;
+}
+
+#poem-title {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--tx);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+#poem-content {
+    white-space: pre-wrap;
+    font-size: 1.1rem;
+    color: var(--tx);
+    margin-bottom: 1.5rem;
+}
+
+#poem-content .stanza {
+    margin-bottom: 1.25rem;
+}
+
+#poem-author {
+    font-style: italic;
+    color: var(--tx-2);
+    text-align: right;
+    font-size: 0.95rem;
+}
+
+#random-btn {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 2rem auto;
+    padding: 0.85rem 1.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: var(--bg-2);
+    color: var(--tx);
+    border: 1px solid var(--ui-2);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#random-btn:hover {
+    background-color: var(--ui);
+    border-color: var(--tx-3);
+}
+
+#random-btn:active {
+    background-color: var(--ui-2);
+}
+
+footer {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--ui-2);
+}
+
+#poem-count {
+    font-size: 0.85rem;
+    color: var(--tx-3);
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    #poem-title {
+        font-size: 1.1rem;
+    }
+
+    #poem-content {
+        font-size: 1rem;
+    }
+}
