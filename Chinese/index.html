@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classical Chinese Flashcards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Classical Chinese<br><span>Essential 60 Characters</span></h1>
+
+        <div id="menu-screen" class="screen active">
+            <div class="control-group">
+                <label>Study Mode</label>
+                <div class="mode-select">
+                    <button class="mode-btn active" data-mode="flashcard" onclick="selectMode('flashcard')">Flashcards</button>
+                    <button class="mode-btn" data-mode="quiz" onclick="selectMode('quiz')">Quiz</button>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label>Deck Selection</label>
+                <select id="category-select">
+                    <option value="all">All Characters (60)</option>
+                    <option value="Particles">Particles (20)</option>
+                    <option value="Verbs">Verbs (15)</option>
+                    <option value="Philosophy">Philosophy (15)</option>
+                    <option value="Qualities">Qualities & Relations (10)</option>
+                    <option value="random10">Random 10</option>
+                </select>
+            </div>
+
+            <button class="start-btn" onclick="startGame()">Start Study</button>
+        </div>
+
+        <div id="flashcard-screen" class="screen">
+            <div class="progress-bar">
+                <span id="fc-progress">1 / 10</span>
+                <button class="exit-btn" onclick="showMenu()">✕</button>
+            </div>
+
+            <div class="card-container" onclick="flipCard()">
+                <div class="card" id="flashcard">
+                    <div class="card-front">
+                        <div class="hanzi" id="fc-char">?</div>
+                        <div class="hint">Tap to flip</div>
+                    </div>
+                    <div class="card-back">
+                        <div class="pinyin" id="fc-pinyin"></div>
+                        <div class="meaning" id="fc-meaning"></div>
+                        <div class="category-tag" id="fc-category"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button onclick="prevCard()">← Prev</button>
+                <button onclick="nextCard()">Next →</button>
+            </div>
+        </div>
+
+        <div id="quiz-screen" class="screen">
+            <div class="progress-bar">
+                <span id="quiz-progress">1 / 10</span>
+                <span id="quiz-score">Score: 0</span>
+                <button class="exit-btn" onclick="showMenu()">✕</button>
+            </div>
+
+            <div class="quiz-container">
+                <div class="question-box">
+                    <p>Which character means:</p>
+                    <h2 id="quiz-question">...</h2>
+                </div>
+
+                <div class="options-grid" id="quiz-options">
+                    </div>
+                
+                <div id="quiz-feedback" class="feedback"></div>
+                <button id="quiz-next-btn" class="next-btn hidden" onclick="nextQuizQuestion()">Next Question →</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
